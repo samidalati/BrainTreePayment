@@ -10,6 +10,8 @@ var gateway = braintree.connect({
 });
 
 router.post('/', function(req, res) {
+  var idList = req.body.email.split('@')
+  var userID = idList[0] + idList[1].split('.')[0];
  var merchantAccountParams = {
  individual: {
     firstName: req.body.firstname,
@@ -40,15 +42,15 @@ router.post('/', function(req, res) {
  },*/
  funding: {
    //descriptor: "Blue Ladders",
-   destination: braintree.MerchantAccount.FundingDestination.Bank,
+   destination: braintree.MerchantAccount.FundingDestination.Email,
    email: req.body.email,
    mobilePhone: req.body.phone,
-   accountNumber: "1123583321",
-   routingNumber: "071101307"
+   //accountNumber: "1123583321",
+   //routingNumber: "071101307"
  },
  tosAccepted: true,
  masterMerchantAccountId: "brizi",
- id: "kjhasd"
+ id: userID
 };
 
  gateway.merchantAccount.create(merchantAccountParams, function (err, result) {
