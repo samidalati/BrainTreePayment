@@ -1,0 +1,18 @@
+html
+  body
+    form#checkout(method='post', action='/checkout')
+      #payment-form
+      br
+      br
+      input(type='text', name='Amount')
+      input(type='submit', value=' Pay ')
+    script(src='https://js.braintreegateway.com/v2/braintree.js')
+    script.
+      // We generated a client token for you so you can test out this code
+      // immediately. In a production-ready integration, you will need to
+      // generate a client token on your server (see section below).
+      var customerID = '#{customerID}'
+      var clientToken = '#{token}';
+      braintree.setup(clientToken, "dropin", {
+      container: "payment-form"
+      });

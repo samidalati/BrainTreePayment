@@ -1,0 +1,24 @@
+doctype html
+html
+  body
+    form(method='post', action='/loggedin')
+      | First name:
+      input(type='text', name='firstname', value='Mickey')
+      br
+      | Last name:
+      input(type='text', name='lastname', value='Mouse')
+      br
+      | Company
+      input(type='text', name='company', value='Brizi')
+      br
+      | website
+      input(type='text', name='website', value='www.flybrizi.com')
+      br
+      | Email
+      input(type='text', name='email', value='sami@flybrizi.com')
+      br
+      | Phone
+      input(type='text', name='phone', value='6475158956')
+      br
+      br
+      input(type='submit', value='Signup')
