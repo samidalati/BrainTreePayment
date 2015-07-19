@@ -2,11 +2,18 @@ var express = require('express');
 var router = express.Router();
 var braintree = require("braintree");
 
-var gateway = braintree.connect({
+/*var gateway = braintree.connect({
   environment: braintree.Environment.Sandbox,
   merchantId: "m9wfy6htd7m3427f",
   publicKey: "d6c3553h5w3by8z3",
   privateKey: "013f196915d9f08e3580b0b4c81b2b55"
+});*/
+
+var gateway = braintree.connect({
+ environment: braintree.Environment.Sandbox,
+ merchantId: "g5hh4hpnxpxhg5d6",
+ publicKey: "kcwbzw24fpcwh6td",
+ privateKey: "9d2e8f61176c63087be4325358c61ee8"
 });
 
 /* GET home page. */

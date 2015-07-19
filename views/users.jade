@@ -1,0 +1,41 @@
+doctype html
+html
+  body
+    form#sub(method='post', action='/subm')
+      | First name:
+      input(type='text', name='firstname', value='Mickey')
+      br
+      | Last name:
+      input(type='text', name='lastname', value='Mouse')
+      br
+      | Company
+      input(type='text', name='company', value='Brizi')
+      br
+      | website
+      input(type='text', name='website', value='www.flybrizi.com')
+      br
+      | Email
+      input(type='text', name='email', value='sami@flybrizi.com')
+      br
+      | Phone
+      input(type='text', name='phone', value='6475158956')
+      br
+      | Date Of Birth   
+      input(type='text', name='dateOfBirth', value='1981-01-05')
+      br
+      | SSN   
+      input(type='text', name='ssn', value='9999')
+      br
+      | Address:
+      br
+      | Street
+      input(type='text', name='streetAddress', value='101 College St')
+      br
+      | City
+      input(type='text', name='locality', value='Toronto')
+      br
+      | Provence
+      input(type='text', name='region', value='OH')
+      br
+      br
+      input(type='submit', value='Signup')
