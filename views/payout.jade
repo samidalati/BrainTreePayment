@@ -1,0 +1,15 @@
+html
+  body
+    form#payout(method='post', action='/payout')
+      #payment-form
+      br
+      br
+      input(type='text', name='Amount')
+      input(type='hidden', name='submerchantID', value='#{submerchantID}')
+      input(type='submit', value=' Pay ')
+    script(src='https://js.braintreegateway.com/v2/braintree.js')
+    script.
+      var submerchantID = ''
+      braintree.setup(clientToken, "dropin", {
+      container: "payment-form"
+      });

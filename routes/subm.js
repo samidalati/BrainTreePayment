@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
     phone: req.body.phone,
     //website: req.body.website,
    dateOfBirth: req.body.dateOfBirth,
-   ssn: req.body.ssn,
+   //ssn: req.body.ssn,
    address: {
      streetAddress: req.body.streetAddress,
      locality: req.body.locality,
@@ -54,10 +54,20 @@ router.post('/', function(req, res) {
 };
 
  gateway.merchantAccount.create(merchantAccountParams, function (err, result) {
-  res.send(result);
-   console.log(result);
+   
+  if(result.success == true){
+       //res.send('User Account created :)');
+       res.render('payout', {submerchantID:result.merchantAccount.id});
+  }
+  else{
+     res.send(result);
+  }
+
+   //console.log(result);
  });
  //res.render(result);
 });
+
+
 
 module.exports = router;
